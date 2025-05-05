@@ -1,0 +1,18 @@
+{
+    "name": "ottivo/vacation-calculator",
+    "description": "Ottivo Employee Vacation Calculator",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^12.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ottivo\\VacationCalculator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shivaraj"
+        }
+    ]
+}
