@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  vacation-cli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vacation-cli
+    volumes:
+      - .:/app   # Mount source for live editing if needed
+    working_dir: /app
+    entrypoint: [ "php", "bin/calculate_vacation_days.php" ]
+    # Override this for test run using: docker-compose run vacation-cli vendor/bin/phpunit
+
+  phpunit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vacation-test
+    volumes:
+      - .:/app
+    working_dir: /app
+    entrypoint: [ "vendor/bin/phpunit" ]
